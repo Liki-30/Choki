@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white; /* White background */
+            color: black;
+            text-align: center;
+        }
+        header {
+            background-color: white; /* Changed to white background color */
+            color: black; /* Changed text color to black */
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            margin: 0;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 20px;
+        }
+        .image-box img {
+            max-width: 80%; /* Made all images the same size */
+            padding: 10px;
+            border: none; /* Removed border for images */
+        }
+        .image-box .large-image {
+            max-width: 90%; /* Made choki7.jpg image a little bigger */
+            height: 100%;
+        }
+        .image-title {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .view-all-link {
+            margin-top: 10px; /* Added line gap for View All */
+            text-decoration: none;
+            color: blue;
+            font-size: 16px;
+        }
+        footer {
+            background-color: lightgray;
+            padding: 60px; /* Made footer section bigger */
+            text-align: center;
+            position: relative;
+        }
+        .footer-quote {
+            margin-bottom: 40px; /* Added space below the quote */
+            font-size: 16px;
+            font-style: italic;
+            font-weight: bold; /* Made the quote bold */
+        }
+        .footer-image {
+            position: absolute;
+            bottom: 40px; /* Adjusted position */
+            max-width: 50px; /* Made image smaller */
+        }
+        .footer-image-left {
+            left: 250px; /* Position for the left image */
+        }
+        .footer-image-middle {
+            left: calc(50% - 25px); /* Position for the middle image */
+        }
+        .footer-image-right {
+            right: 250px; /* Position for the right image */
+        }
+        .footer-title {
+            position: absolute;
+            bottom: 10px; /* Moved title closer to the image */
+            font-size: 12px;
+            text-align: center;
+        }
+        .footer-title-left {
+            left: 225px; /* Position for the left title */
+        }
+        .footer-title-middle {
+            left: calc(50% - 50px); /* Position for the middle title */
+        }
+        .footer-title-right {
+            right: 225px; /* Position for the right title */
+        }
+        .our-products {
+            text-align: left; /* Align "Our Products" heading to the left */
+            margin-left: 270px; /* Add some left margin */
+            display: inline-block;
+            width: 33%;
+        }
+        .Legal {
+            text-align: center;
+            display: inline-block;
+            width: 33%;
+        }
+        .follow {
+            text-align: right;
+            display: inline-block;
+            margin-right: 300px;
+            width: 33%;
+        }
+        .product-category {
+            text-align: left;
+            margin-left: 300px;
+            font-size: 16px;
+        }
+        .legal-category {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 0px;
+        }
+        .follow-category {
+            text-align: right;
+            font-size: 16px;
+            margin-right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><u>Categories</u></h1> <!-- Heading in the middle -->
+    </header>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="choki2.jpeg" alt="Choki Image 2">
+            <div class="image-title">Chocolate Pieces</div> <!-- Title below the image -->
+            <a href="view1.html" class="view-all-link">View All</a>
+        </div>
+        <div class="image-box">
+            <img src="choki3.jpg" alt="Choki Image 3">
+            <div class="image-title">Chocolate Bar</div> 
+            <a href="view2.html" class="view-all-link">View All</a>
+        </div>
+        <div class="image-box">
+            <img src="choki4.jpeg" alt="Choki Image 4">
+            <div class="image-title">Chocolate Varieties</div> <!-- Title below the image -->
+            <a href="view3.html" class="view-all-link">View All</a>
+        </div>
+    </div>
+    <h2><u>Best Choki</u></h2> <!-- Added subheading -->
+    <div class="image-container">
+        <div class="image-box">
+            <a href="click1.html">
+                <img src="choki5.jpg" alt="Choki Image 5">
+            </a></a>
+            <div class="image-title">Chocolate Bottle Milk</div>
+        </div>
+        <div class="image-box">
+            <a href="click2.html">
+                <img src="choki6.jpg" alt="Choki Image 6">
+            </a></a>
+            <div class="image-title">Fantasie Tri Bars- Assorted Chocolate</div>
+        </div>
+        <div class="image-box">
+            <a href="click3.html">
+                <img src="choki7.jpg" alt="Choki Image 7" class="large-image">
+            </a></a>
+            <div class="image-title">Chocolate Brownie</div>
+        </div>
+    </div>
+    <footer>
+        <h1 class="footer-quote"><u>"Chocolate is happiness you can eat." </u>🍫</h1> <!-- Moved quote to the top and made it bold, moved it a little up -->
+        <img src="footer1.png" alt="Footer Image" class="footer-image footer-image-left">
+        <div class="footer-title footer-title-left">100% Vegetarian</div> <!-- Correctly placed title below the image -->
+        <img src="footer2.png" alt="Footer Image 2" class="footer-image footer-image-middle">
+        <div class="footer-title footer-title-middle">Environment Friendly</div>
+        <img src="footer3.png" alt="Footer Image 3" class="footer-image footer-image-right">
+        <div class="footer-title footer-title-right">Contains No Egg</div>
+    </footer>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h3 class="our-products">Our Products</h3> <!-- Added h3 tag below the footer section and aligned to the left -->
+            <div class="product-category">Bars</div>
+            <div class="product-category">Varieties</div>
+            <div class="product-category">Dessert</div>
+            <div class="product-category">Gifts For Occasion</div>
+            <div class="product-category">Gifts For Corporates</div>
+            <div class="product-category">Gifts For Children</div>
+            <div class="product-category">Trending Festival</div>
+            <div class="product-category">Health Friendly</div>
+            <div class="product-category">Shop All</div>
+        </div>
+        <div>
+            <h3 class="Legal">Legal</h3>
+            <div class="legal-category">Terms & Conditions</div>
+            <div class="legal-category">Privacy Policy</div>
+            <div class="legal-category">Shipping Policy</div>
+            <div class="legal-category">Cancellation Policy</div>
+        </div>
+        <div>
+            <h3 class="follow">Follow-us-on</h3>
+            <div class="follow-category">Facebook</div>
+            <div class="follow-category">Instagram</div>
+        </div>
+    </div>
+    <footer style="background-color: lightgrey; padding: 3px; text-align: center;"><p>&copy; 2025 Choki Cart. All rights reserved.</p></footer>
+</body>
+</html>

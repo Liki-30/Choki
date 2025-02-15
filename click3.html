@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: gray; /* Set header background color to light brown */
+            text-align: center; /* Center the heading */
+            padding: 10px;
+        }
+        h1 {
+            font-weight: bold; /* Make the heading bold */
+        }
+        .image-container {
+            display: flex;
+            align-items: flex-start; /* Align items to the top */
+            margin: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+        }
+        .image-title {
+            font-weight: bold; /* Make the title bold */
+            margin-left: 20px; /* Add some space between the image and the title */
+            font-size: 50px;
+        }
+        .image-price {
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: 10px; /* Add some space above the price */
+        }
+        .image-weight {
+            font-size: 18px;
+            margin-left: 20px;
+            margin-top: 10px; /* Add some space above the weight */
+        }
+        .choose-option {
+            margin-left: 20px;
+            margin-top: 10px; /* Add some space above the choose option */
+            display: flex;
+            align-items: center; /* Align items in the center */
+        }
+        .choose-option select {
+            margin-left: 10px; /* Add some space between the label and the select box */
+            padding: 10px; /* Add padding to the select box */
+            font-size: 16px; /* Increase font size */
+            width: 150px; /* Make the select box lengthier */
+        }
+        .shipping-info {
+            margin-left: 20px;
+            margin-top: 50px; /* Add some space above the paragraphs */
+        }
+        .product-description {
+            margin-left: 20px;
+            margin-top: 20px; /* Add some space above the description */
+            display: none; /* Initially hide the description */
+            text-align: center; /* Center the text */
+        }
+        .nutrition-info {
+            margin-left: 20px;
+            margin-top: 20px; /* Add some space above the description */
+            display: none; /* Initially hide the description */
+            text-align: center; /* Center the text */
+        }
+        .ingredients-info {
+            margin-left: 20px;
+            margin-top: 20px; /* Add some space above the description */
+            display: none; /* Initially hide the description */
+            text-align: center; /* Center the text */
+        }
+        .toggle-description {
+            cursor: pointer;
+            color: black;
+            text-decoration: none;
+            text-align: left;
+            font-size: 24px;
+            margin-left: 20px;
+            margin-top: 50px; /* Add some space above the toggle */
+        }
+        .top-pick {
+            text-align: center; /* Center the h2 */
+            margin-top: 100px; /* Add some space above the h2 */
+        }
+        .top-pick-images {
+            display: inline-flex;
+            justify-content: space-between; /* Arrange images next to each other */
+            margin-top: 100px; /* Add some space above the images */
+        }
+        .top-pick-images img {
+            margin: 0 50px; /* Add some space between the images */
+            max-width: 300px; /* Set a max width for the images */
+        }
+        .image-caption {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .buy-now-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buy-now-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: lightgray;
+            padding: 60px; /* Made footer section bigger */
+            text-align: center;
+            position: relative;
+        }
+        .footer-quote {
+            margin-bottom: 40px; /* Added space below the quote */
+            font-size: 20px; /* Increased font size */
+            font-style: italic;
+            font-weight: bold; /* Made the quote bold */
+        }
+        .footer-image {
+            position: absolute;
+            bottom: 40px; /* Adjusted position */
+            max-width: 50px; /* Made image smaller */
+        }
+        .footer-image-left {
+            left: 250px; /* Position for the left image */
+        }
+        .footer-image-middle {
+            left: calc(50% - 25px); /* Position for the middle image */
+        }
+        .footer-image-right {
+            right: 250px; /* Position for the right image */
+        }
+        .footer-title {
+            position: absolute;
+            bottom: 10px; /* Moved title closer to the image */
+            font-size: 14px; /* Increased font size */
+            font-weight: bold; /* Made the title bold */
+            text-align: center;
+        }
+        .footer-title-left {
+            left: 225px; /* Position for the left title */
+        }
+        .footer-title-middle {
+            left: calc(50% - 50px); /* Position for the middle title */
+        }
+        .footer-title-right {
+            right: 225px; /* Position for the right title */
+        }
+        .our-products {
+            text-align: left; /* Align "Our Products" heading to the left */
+            margin-left: 270px; /* Add some left margin */
+            display: inline-block;
+            width: 33%;
+        }
+        .Legal {
+            text-align: center;
+            display: inline-block;
+            width: 33%;
+        }
+        .follow {
+            text-align: right;
+            display: inline-block;
+            margin-right: 300px;
+            width: 33%;
+        }
+        .product-category {
+            text-align: left;
+            margin-left: 300px;
+            font-size: 16px;
+        }
+        .legal-category {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 0px;
+        }
+        .follow-category {
+            text-align: right;
+            font-size: 16px;
+            margin-right: 300px;
+        }
+    </style>
+    <script>
+        function toggleDescription() {
+            var description = document.getElementById("description");
+            if (description.style.display === "none") {
+                description.style.display = "block";
+            } else {
+                description.style.display = "none";
+            }
+        }
+        function toggleNutrition() {
+            var nutrition = document.getElementById("nutrition");
+            if (nutrition.style.display === "none") {
+                nutrition.style.display = "block";
+            } else {
+                nutrition.style.display = "none";
+            }
+        }
+        function toggleIngredients() {
+            var ingredients = document.getElementById("ingredients");
+            if (ingredients.style.display === "none") {
+                ingredients.style.display = "block";
+            } else {
+                ingredients.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Choki Car</h1>
+    </header>
+    <div class="image-container">
+        <img src="choki7.jpg" alt="Choki Car Image">
+        <div>
+            <div class="image-title">Chocolate Brownie</div>
+            <div class="image-price">₹175 – ₹1,400</div>
+            <div class="choose-option">
+                <label for="weight">Choose weight:</label>
+                <select id="weight" name="weight">
+                    <option value="250g">250g</option>
+                    <option value="300g">300g</option>
+                    <option value="350g">350g</option>
+                    <option value="400g">400g</option>
+                    <option value="500g">500g</option>
+                </select>
+            </div>
+            <div class="shipping-info">
+                <p>Shipping is based on Availability. All Products typically Ship on a maximum limit of 2 - 3 Days in Mumbai & 4-6 days pan India.</p>
+                <p>Shipments in Mumbai are shipped the same day if the order is placed before 12.00 Noon</p>
+            </div>
+            <div class="toggle-description" onclick="toggleDescription()">+ Product Description</div>
+            <div id="description" class="product-description">
+                <p>Created with immense care and passion, our edible chocolate bottles are made of rich milk chocolate. These are packaged to make you feel like royalty. The smooth textured chocolate will have you devour these bottles in no time and make you reach for the next one almost instantly. Alongside, they are an elegant present to show love and to provide a lush experience to your friends and family.</p>
+                <p>Your FANTASIE is</p>
+                <p>Milk, Gluten Free</p>
+                <p>With a 75-year-old legacy as one of the original chocolate makers of India, Fantasie has been crafting the universally beloved food since 1946. Generations of experience, well-preserved recipes and techniques, and quality ingredients are skillfully blended into Fantasie’s celebrated selection of craft chocolates.</p>
+            </div>
+            <div class="toggle-description" onclick="toggleNutrition()">+ Nutrition & Weight</div>
+            <div id="nutrition" class="nutrition-info">
+                <p>Nutritional Information per 100 grams:</p>
+                <p>Energy 559.64 kcal</p>
+                <p>Proteins 5.83</p>
+                <p>Carbohydrates 55.24</p>
+                <p>Fat 35.04</p>
+                <p>Net Weight:</p>
+                <p>250gm/300gm/400gm/600gm</p>
+            </div>
+            <div class="toggle-description" onclick="toggleIngredients()">+ Ingredients & Storage</div>
+            <div id="ingredients" class="ingredients-info">
+                <p>Ingredients:</p>
+                <p>Sugar, Cocoa Butter, Cocoa Mass, Emulsifier: soya Lecithin,Whole Milk Powder, Natural Vanilla Flavouring</p>
+                <p>Shelf Life:</p>
+                <p>Best within a week of purchase</p>
+                <p>Expiry 6 months from the date on packaging</p>
+                <p>Storage Instruction:</p>
+                <p>Re-pack the chocolate after consuming it. Store in a cool, airtight and dry place or the refrigerator.</p>
+            </div>
+        </div>
+    </div>
+    <div class="top-pick">
+        <h2>TOP PICK FOR YOU</h2>
+        <div class="top-pick-images">
+            <div>
+                <img src="view1.3.jpg" alt="choki">
+                <div class="image-caption">Belgium 100% Dark Chocolate</div>
+            </div>
+            <div>
+                <img src="view2.4.jpg" alt="choki">
+                <div class="image-caption">70% Dark chocolate with cashew</div>
+            </div>
+            <div>
+                <img src="view2.1.jpg" alt="choki">
+                <div class="image-caption">Fantasie 70% Dark Chocolate</div>
+            </div>
+        </div>
+    </div>
+    <a href="contact.html" class="buy-now-button">Buy Now</a>
+    <footer>
+        <h1 class="footer-quote">We believe in sustainable lifestyles</h1> <!-- Moved quote to the top and made it bold, moved it a little up -->
+        <img src="footer1.png" alt="Footer Image" class="footer-image footer-image-left">
+        <div class="footer-title footer-title-left">100% Vegetarian</div> <!-- Correctly placed title below the image -->
+        <img src="footer2.png" alt="Footer Image 2" class="footer-image footer-image-middle">
+        <div class="footer-title footer-title-middle">Environment Friendly</div>
+        <img src="footer3.png" alt="Footer Image 3" class="footer-image footer-image-right">
+        <div class="footer-title footer-title-right">Contains No Egg</div>
+    </footer>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h3 class="our-products">Our Products</h3> <!-- Added h3 tag below the footer section and aligned to the left -->
+            <div class="product-category">Bars</div>
+            <div class="product-category">Varieties</div>
+            <div class="product-category">Dessert</div>
+            <div class="product-category">Gifts For Occasion</div>
+            <div class="product-category">Gifts For Corporates</div>
+            <div class="product-category">Gifts For Children</div>
+            <div class="product-category">Trending Festival</div>
+            <div class="product-category">Health Friendly</div>
+            <div class="product-category">Shop All</div>
+        </div>
+        <div>
+            <h3 class="Legal">Legal</h3>
+            <div class="legal-category">Terms & Conditions</div>
+            <div class="legal-category">Privacy Policy</div>
+            <div class="legal-category">Shipping Policy</div>
+            <div class="legal-category">Cancellation Policy</div>
+        </div>
+        <div>
+            <h3 class="follow">Follow-us-on</h3>
+            <div class="follow-category">Facebook</div>
+            <div class="follow-category">Instagram</div>
+        </div>
+    </div>
+    <footer style="background-color: lightgrey; padding: 3px; text-align: center;"><p>&copy; 2025 Choki Cart. All rights reserved.</p></footer>
+</body>
+</html>
+

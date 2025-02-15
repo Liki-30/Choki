@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: nowrap; /* Prevent images from wrapping to the next line */
+        }
+        .image-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px; /* Reduced margin to decrease space between images */
+            flex: 1 1 25%; /* Adjust flex basis to 25% to fit 4 images in a line */
+        }
+        .image-box img {
+            max-width: 200px; /* Made all images the same size */
+            padding: 10px;
+            border: none; /* Removed border for images */
+        }
+        .image-title {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        body {
+            background-color: white; /* Set background color to white */
+        }
+        .buy-now-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .buy-now-button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: lightgray;
+            padding: 60px; /* Made footer section bigger */
+            text-align: center;
+            position: relative;
+        }
+        .footer-quote {
+            margin-bottom: 40px; /* Added space below the quote */
+            font-size: 20px; /* Increased font size */
+            font-style: italic;
+            font-weight: bold; /* Made the quote bold */
+        }
+        .footer-image {
+            position: absolute;
+            bottom: 40px; /* Adjusted position */
+            max-width: 50px; /* Made image smaller */
+        }
+        .footer-image-left {
+            left: 250px; /* Position for the left image */
+        }
+        .footer-image-middle {
+            left: calc(50% - 25px); /* Position for the middle image */
+        }
+        .footer-image-right {
+            right: 250px; /* Position for the right image */
+        }
+        .footer-title {
+            position: absolute;
+            bottom: 10px; /* Moved title closer to the image */
+            font-size: 14px; /* Increased font size */
+            font-weight: bold; /* Made the title bold */
+            text-align: center;
+        }
+        .footer-title-left {
+            left: 225px; /* Position for the left title */
+        }
+        .footer-title-middle {
+            left: calc(50% - 50px); /* Position for the middle title */
+        }
+        .footer-title-right {
+            right: 225px; /* Position for the right title */
+        }
+        .our-products {
+            text-align: left; /* Align "Our Products" heading to the left */
+            margin-left: 270px; /* Add some left margin */
+            display: inline-block;
+            width: 33%;
+        }
+        .Legal {
+            text-align: center;
+            display: inline-block;
+            width: 33%;
+        }
+        .follow {
+            text-align: right;
+            display: inline-block;
+            margin-right: 300px;
+            width: 33%;
+        }
+        .product-category {
+            text-align: left;
+            margin-left: 300px;
+            font-size: 16px;
+        }
+        .legal-category {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 0px;
+        }
+        .follow-category {
+            text-align: right;
+            font-size: 16px;
+            margin-right: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chocolate Bar</h1>
+    </header>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="view2.1.jpg" alt="choki">
+            <div class="image-title">Cooking / Covering Chocolate 500g</div>
+            <div class="image-title">₹3000</div>
+        </div>
+        <div class="image-box">
+            <img src="view2.2.jpeg" alt="choki">
+            <div class="image-title">Soft Center</div>
+            <div class="image-title">₹2500</div>
+        </div>
+        <div class="image-box">
+            <img src="view2.3.jpeg" alt="choki">
+            <div class="image-title">Fruite & Nuts</div>
+            <div class="image-title">₹950</div>
+        </div>
+        <div class="image-box">
+            <img src="view2.4.jpg" alt="choki">
+            <div class="image-title">White Chocolate</div>
+            <div class="image-title">₹3300</div>
+        </div>
+    </div>
+    <div class="image-container">
+        <div class="image-box">
+            <img src="view2.5.jpg" alt="choki">
+            <div class="image-title">Dark Chocolate</div>
+            <div class="image-title">₹3500</div>
+        </div>
+        <div class="image-box">
+            <img src="view2.6.jpg" alt="choki">
+            <div class="image-title">Milk Chocolate</div>
+            <div class="image-title">₹3250</div>
+        </div>
+    </div>
+    <a href="contact.html" class="buy-now-button">Buy Now</a>
+    <footer>
+        <h1 class="footer-quote">We believe in sustainable lifestyles</h1> <!-- Moved quote to the top and made it bold, moved it a little up -->
+        <img src="footer1.png" alt="Footer Image" class="footer-image footer-image-left">
+        <div class="footer-title footer-title-left">100% Vegetarian</div> <!-- Correctly placed title below the image -->
+        <img src="footer2.png" alt="Footer Image 2" class="footer-image footer-image-middle">
+        <div class="footer-title footer-title-middle">Environment Friendly</div>
+        <img src="footer3.png" alt="Footer Image 3" class="footer-image footer-image-right">
+        <div class="footer-title footer-title-right">Contains No Egg</div>
+    </footer>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <h3 class="our-products">Our Products</h3> <!-- Added h3 tag below the footer section and aligned to the left -->
+            <div class="product-category">Bars</div>
+            <div class="product-category">Varieties</div>
+            <div class="product-category">Dessert</div>
+            <div class="product-category">Gifts For Occasion</div>
+            <div class="product-category">Gifts For Corporates</div>
+            <div class="product-category">Gifts For Children</div>
+            <div class="product-category">Trending Festival</div>
+            <div class="product-category">Health Friendly</div>
+            <div class="product-category">Shop All</div>
+        </div>
+        <div>
+            <h3 class="Legal">Legal</h3>
+            <div class="legal-category">Terms & Conditions</div>
+            <div class="legal-category">Privacy Policy</div>
+            <div class="legal-category">Shipping Policy</div>
+            <div class="legal-category">Cancellation Policy</div>
+        </div>
+        <div>
+            <h3 class="follow">Follow-us-on</h3>
+            <div class="follow-category">Facebook</div>
+            <div class="follow-category">Instagram</div>
+        </div>
+    </div>
+    <footer style="background-color: lightgrey; padding: 3px; text-align: center;"><p>&copy; 2025 Choki Cart. All rights reserved.</p></footer>
+</body>
+</html>
